@@ -15,8 +15,7 @@ createApp({
             axios
                 .get('server.php').then(
                     res => {
-                        console.log(res.data)
-                        this.todos = res.data
+                        this.todos = res.data.todos
                     }
                 )
         },
