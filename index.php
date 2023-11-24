@@ -7,7 +7,7 @@
     <title>To Do List</title>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <link rel="stylesheet" href="./style/style.css">
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 
 <body>
@@ -17,13 +17,12 @@
                 <label for="todo">
                     <h3>Insert your task</h3>
                 </label>
-                <input type="text" id="todo" v-model="newtodo" @keyup.enter="">
+                <input type="text" id="todo" v-model="newTodo" @keyup.enter="postData">
             </div>
         </section>
         <section class="section">
             <div class="container">
                 <ul>
-                    <li>{{ newtodo }}</li>
                     <li v-for="(todo, i) in todos" :key="i"> {{ todo.text }}</li>
                 </ul>
             </div>
