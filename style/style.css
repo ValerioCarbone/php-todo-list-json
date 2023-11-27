@@ -16,10 +16,24 @@ menu {
 }
 
 .container {
-    max-width: 1000px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.container-sm {
+    max-width: 300px;
     margin: 0 auto;
 }
 
 .done {
     text-decoration: line-through;
+}
+
+.task-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.input {
+    text-align: center;
 }

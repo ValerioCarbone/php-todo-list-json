@@ -55,6 +55,23 @@ createApp({
                     console.log(res.data);
                     this.todos = res.data
                 })
+        },
+        deleteTask(index) {
+
+            const data = {
+                id: index
+            }
+
+            axios
+                .post('delete.php', data, {
+                    headers: {
+                        'Content-Type': 'multipart/form-data'
+                    }
+                })
+                .then((res) => {
+                    console.log(res.data);
+                    this.todos = res.data
+                })
         }
     },
     created() {
