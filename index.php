@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To Do List</title>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <link rel="stylesheet" href="./style/style.css">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="./style/style.css">
 </head>
 
 <body>
@@ -15,7 +15,7 @@
         <section class="section">
             <div class="container">
                 <label for="todo">
-                    <h3>Insert your task</h3>
+                    <h3 class="title">Insert your task</h3>
                 </label>
                 <input type="text" id="todo" v-model="newTodo" @keyup.enter="postData">
             </div>
@@ -23,7 +23,7 @@
         <section class="section">
             <div class="container">
                 <ul>
-                    <li v-for="(todo, i) in todos" :key="i"> {{ todo.text }}</li>
+                    <li v-for="(todo, index) in todos" :key="index" :class="todo.done == true ? 'done' : ''" @click="updateStatus(index)"> {{ todo.text }}</li>
                 </ul>
             </div>
         </section>

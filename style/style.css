@@ -19,3 +19,7 @@ menu {
     max-width: 1000px;
     margin: 0 auto;
 }
+
+.done {
+    text-decoration: line-through;
+}

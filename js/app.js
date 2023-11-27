@@ -16,6 +16,8 @@ createApp({
                 .get('server.php').then(
                     res => {
                         this.todos = res.data.todos
+                        console.log(res.data)
+                        console.log(this.todos)
                     }
                 )
         },
@@ -32,9 +34,32 @@ createApp({
                     }
                 })
                 .then((res) => {
-                    console.log(res.data)
+
                     this.todos = res.data.todos
                     this.newTodo = ''
+                })
+        },
+        updateStatus(index) {
+
+            this.todos[index].done = !this.todos[index].done
+
+            console.log(this.todos)
+
+            const data = {
+                updatedTodos: this.todos
+            }
+
+            axios
+                .post('update.php', data, {
+                    headers: {
+                        'Content-Type': 'multipart/form-data'
+                    }
+                })
+                .then((res) => {
+                    console.log(res.data)
+                    this.todos = res.data
+
+
                 })
         }
     },
