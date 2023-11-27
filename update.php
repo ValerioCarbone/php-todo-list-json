@@ -1,12 +1,15 @@
 <?php
 
-$new_todos = $_POST['updatedTodos'] ?? '';
+$todo_id = $_POST['id'];
 
-$json_todos = json_encode($new_todos);
+$todos_string = file_get_contents('./todo-list.json');
 
-file_put_contents('./todo-list.json', $json_todos);
+$todos = json_decode($todos_string, true);
 
+$todos[$todo_id]['done'] = !$todos[$todo_id]['done'];
 
-header('Content-type: application/json');
+file_put_contents('./todo-list.json', json_encode($todos));
 
-echo $json_todos;
+header('Content-Type: application/json');
+
+echo json_encode($todos);

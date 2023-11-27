@@ -23,7 +23,7 @@
         <section class="section">
             <div class="container">
                 <ul>
-                    <li v-for="(todo, index) in todos" :key="index" :class="todo.done == true ? 'done' : ''" @click="updateStatus(index)"> {{ todo.text }}</li>
+                    <li v-for="(todo, index) in todos" :key="index" :class="{ done: todo.done }" @click="updateStatus(index)"> {{ todo.text }}</li>
                 </ul>
             </div>
         </section>

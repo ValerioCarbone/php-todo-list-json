@@ -41,12 +41,8 @@ createApp({
         },
         updateStatus(index) {
 
-            this.todos[index].done = !this.todos[index].done
-
-            console.log(this.todos)
-
             const data = {
-                updatedTodos: this.todos
+                id: index
             }
 
             axios
@@ -56,10 +52,8 @@ createApp({
                     }
                 })
                 .then((res) => {
-                    console.log(res.data)
+                    console.log(res.data);
                     this.todos = res.data
-
-
                 })
         }
     },
