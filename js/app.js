@@ -16,8 +16,6 @@ createApp({
                 .get('server.php').then(
                     res => {
                         this.todos = res.data.todos
-                        console.log(res.data)
-                        console.log(this.todos)
                     }
                 )
         },
@@ -52,7 +50,6 @@ createApp({
                     }
                 })
                 .then((res) => {
-                    console.log(res.data);
                     this.todos = res.data
                 })
         },
@@ -69,7 +66,6 @@ createApp({
                     }
                 })
                 .then((res) => {
-                    console.log(res.data);
                     this.todos = res.data
                 })
         }
