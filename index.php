@@ -13,21 +13,25 @@
 
 <body>
     <div id="app">
-        <section class="section">
-            <div class="container input">
+        <section class="section input">
+            <div class="container">
                 <label for="todo">
                     <h3 class="title">Insert your task</h3>
                 </label>
                 <input type="text" id="todo" v-model="newTodo" @keyup.enter="postData">
             </div>
         </section>
-        <section class="section">
+        <section class="section tasks">
             <div class="container-sm">
-                <ul>
-                    <li v-for="(todo, index) in todos" :key="index" :class="{ done: todo.done }" @click="updateStatus(index)" class="task-wrapper">
-                        <p>{{ todo.text }}</p>
+                <ul class="task-wrapper">
+                    <li v-for="(todo, index) in todos" :key="index" :class="{ done: todo.done }" @click="updateStatus(index)" class="task">
+                        <p>{{ todo.text }}
+                            <span>
+                                <i v-if="todo.done" class="fa-solid fa-check green-icon"></i>
+                            </span>
+                        </p>
                         <span>
-                            <i class="fa-regular fa-circle-xmark" @click.stop="deleteTask(index)"></i>
+                            <i class="fa-regular fa-circle-xmark red-icon" @click.stop="deleteTask(index)"></i>
                         </span>
                     </li>
                 </ul>

@@ -21,7 +21,7 @@ menu {
 }
 
 .container-sm {
-    max-width: 300px;
+    max-width: 500px;
     margin: 0 auto;
 }
 
@@ -29,11 +29,43 @@ menu {
     text-decoration: line-through;
 }
 
-.task-wrapper {
+.task {
     display: flex;
     justify-content: space-between;
+    padding: 8px;
+    background-color: white;
+    border-bottom: 1px solid rgb(171, 170, 170);
+    color: rgb(133, 131, 131);
+    border-radius: 10px;
+    margin-bottom: 4px;
 }
 
 .input {
     text-align: center;
+    background-color: rgb(220, 175, 92);
+    height: 120px;
+}
+
+.tasks {
+    background-color: rgb(255, 234, 0);
+    height: calc(100vh - 120px);
+}
+
+.title {
+    color: white;
+}
+
+.input input {
+    margin-top: 6px;
+    border: 1px solid rgb(133, 131, 131);
+    border-radius: 5px;
+}
+
+.green-icon {
+    margin-left: 8px;
+    color: rgb(0, 181, 0)
+}
+
+.red-icon {
+    color: red;
 }
